@@ -20,5 +20,5 @@ number = st.slider("Pick a sample number (0-939)",0,939)
 
 y_true = np.squeeze(y_test[number])
 
-st.image(y_true,clamp=True)
+st.image(y_true,clamp=True,width=200)
 
