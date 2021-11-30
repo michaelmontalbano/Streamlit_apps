@@ -28,5 +28,6 @@ y_true = np.interp(y_true, (y_true.min(), y_true.max()), (0, +1))
 y_pred = np.squeeze(y_pred[number])
 y_pred = np.interp(y_pred, (y_pred.min(), y_pred.max()), (0, +1))
 
-st.image(y_true,width=600)
-st
+st.image(y_true,width=300)
+st.image(y_pred,width=300)
+
