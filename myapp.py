@@ -24,11 +24,11 @@ number = st.slider("Pick a sample number (0-939)",0,939)
 
 y_true = np.squeeze(y_test[number])
 y_true = np.interp(y_true, (y_true.min(), y_true.max()), (0, +1))
-y_true[y_true < 0.2] = 0
+y_true[y_true < 0.3] = 0
 
 y_pred = np.squeeze(y_pred[number])
 y_pred = np.interp(y_pred, (y_pred.min(), y_pred.max()), (0, +1))
-y_pred[y_pred < 0.2] = 0
+y_pred[y_pred < 0.3] = 0
 
 # f, axs = plt.subplots(1,2,figsize=(15,15))
 
