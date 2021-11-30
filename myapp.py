@@ -16,7 +16,7 @@ loss = st.radio("Pick a loss function", loss_functions)
 y_test = load('data/y_test_raw.npy')
 y_pred = load('data/y_pred_raw.npy')
 
-st.text_input("Pick a sample number (0-939)", key="sample")
+st.slider("Pick a sample number (0-939)",0,939)
 
 sample = int(st.session_state.sample)
 
