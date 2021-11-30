@@ -3,7 +3,7 @@ import pandas as pd
 from PIL import Image
 import numpy as np
 from numpy import load
-import altair as alt
+from bokeh.plotting import figure, show
 
 st.write("""
 # Model Analytics
