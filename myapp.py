@@ -28,6 +28,7 @@ y_true = np.interp(y_true, (y_true.min(), y_true.max()), (0, +1))
 
 y_pred = np.squeeze(y_pred[number])
 y_pred = np.interp(y_pred, (y_pred.min(), y_pred.max()), (0, +1))
+y_pred[y_pred < 0.1] = 0
 
 # f, axs = plt.subplots(1,2,figsize=(15,15))
 
