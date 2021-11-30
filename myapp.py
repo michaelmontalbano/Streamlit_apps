@@ -5,14 +5,7 @@ import numpy as np
 from numpy import load
 import matplotlib.pyplot as plt
 import matplotlib as mpl
-import pickle
-import sklearn.metrics
-from netCDF4 import Dataset
-from mpl_toolkits.axes_grid1 import make_axes_locatable
-from matplotlib.pyplot import figure
 import matplotlib.cm as cm
-from matplotlib import colors
-import sys
 from matplotlib.colors import rgb2hex
 
 MESH_colors = ['#aaaaaa','#00ffff','#0080ff','#0000ff','#007f00','#00bf00','#00ff00','#ffff00','#bfbf00','#ff9900','#ff0000','#bf0000','#7f0000','#ff1fff']
