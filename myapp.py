@@ -3,7 +3,6 @@ import pandas as pd
 from PIL import Image
 import numpy as np
 from numpy import load
-import matplotlib
 
 st.write("""
 # Model Analytics
