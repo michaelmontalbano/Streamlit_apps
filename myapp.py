@@ -1,13 +1,13 @@
 import streamlit as st
 import pandas as pd
-import PIL
+from PIL import Image
 
 st.write("""
 # My first application
 Choose an image.
 """)
 
-uploaded_file = st.file_uploader("Choose an image", type=["jpg", "png"])
+uploaded_file = st.file_uploader("Choose an image")
 
 if uploaded_file is not None:
     image = Image.open(uploaded_file)
