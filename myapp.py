@@ -3,6 +3,24 @@ import pandas as pd
 from PIL import Image
 import numpy as np
 from numpy import load
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+import pickle
+import sklearn.metrics
+from netCDF4 import Dataset
+from mpl_toolkits.axes_grid1 import make_axes_locatable
+from matplotlib.pyplot import figure
+import matplotlib.cm as cm
+from matplotlib import colors
+import sys
+from matplotlib.colors import rgb2hex
+
+MESH_colors = ['#aaaaaa','#00ffff','#0080ff','#0000ff','#007f00','#00bf00','#00ff00','#ffff00','#bfbf00','#ff9900','#ff0000','#bf0000','#7f0000','#ff1fff']
+MESH_bounds = [9.525,15.875,22.225,28.575,34.925,41.275,47.625,53.975,60.325,65,70,75,80,85]
+
+# scalers = open_pickle('scaler_raw.pkl')
+# scaler = scalers[0]
+
 
 st.write("""
 # Model Analytics
@@ -24,12 +42,12 @@ else:
 number = st.number_input("Pick a sample number (0-939)",0,939)
 
 y_true = np.squeeze(y_test[number])
-y_true = np.interp(y_true, (y_true.min(), y_true.max()), (0, +255)).astype('uint8')
-y_true[y_true < 0.3] = 0
+#y_true = np.interp(y_true, (y_true.min(), y_true.max()), (0, +255)).astype('uint8')
+#y_true[y_true < 0.3] = 0
 
 y_pred = np.squeeze(y_pred[number])
-y_pred = np.interp(y_pred, (y_pred.min(), y_pred.max()), (0, +1))
-y_pred[y_pred < 0.3] = 0
+#y_pred = np.interp(y_pred, (y_pred.min(), y_pred.max()), (0, +1))
+#y_pred[y_pred < 0.3] = 0
 
 # f, axs = plt.subplots(1,2,figsize=(15,15))
 
@@ -43,24 +61,6 @@ y_pred[y_pred < 0.3] = 0
 
 # st.pyplot(f)
 
-palette = [255,0,0,    # 0=red
-           0,255,0,    # 1=green
-           0,0,255,    # 2=blue
-           255,255,0,  # 3=yellow
-           0,255,255]  # 4=cyan
-# Pad with zeroes to 768 values, i.e. 256 RGB colours
-palette = palette + [0]*(768-len(palette))
-
-# Convert Numpy array to palette image
-pi = Image.fromarray(y_true,'P')
-
-# Put the palette in
-#pi.putpalette(palette)
-
-# Display and save
-pi.show()
-pi.save('result.png')
-
-# st.image(y_true,width=300)
-# st.image(y_pred,width=300)
+ax = plt.gca()
+bounds = MESH_bounds
 
