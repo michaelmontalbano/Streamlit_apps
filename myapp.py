@@ -12,8 +12,8 @@ loss_functions = ['mean_squared_error', 'mean_absolute_error']
 
 loss = st.radio("Pick a loss function", loss_functions)
 
-y_test = np.load('/data/y_test_raw.npy')
-y_pred = np.load('/data/y_pred_raw.npy')
+y_test = load('/data/y_test_raw.npy')
+y_pred = load('/data/y_pred_raw.npy')
 
 st.text_input("Pick a sample number (0-939)", key="sample")
 
