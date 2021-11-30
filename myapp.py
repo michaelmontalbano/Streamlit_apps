@@ -20,7 +20,7 @@ number = st.slider("Pick a sample number (0-939)",0,939)
 
 y_true = np.squeeze(y_test[number])
 
-new_arr = ((y_true - y_true.min()) * (1/(y_true.max() - y_true.min()) * 1)).astype('uint8')
+new_arr = ((y_true - y_true.min()) * (1/(y_true.max() - y_true.min()) * 1)).astype(float)
 
 st.image(y_true,width=200)
 
