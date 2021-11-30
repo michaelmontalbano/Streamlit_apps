@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 from numpy import load
-import matplotlib.pyplot as plt
 
 st.write("""
 # Model Analytics
