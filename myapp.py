@@ -16,11 +16,9 @@ loss = st.radio("Pick a loss function", loss_functions)
 y_test = load('data/y_test_raw.npy')
 y_pred = load('data/y_pred_raw.npy')
 
-st.slider("Pick a sample number (0-939)",0,939)
+number = st.slider("Pick a sample number (0-939)",0,939)
 
-sample = int(st.session_state.sample)
-
-y_true = np.squeeze(y_test[sample])
+y_true = np.squeeze(y_test[number])
 
 st.image(y_true)
 
