@@ -29,17 +29,17 @@ y_true = np.interp(y_true, (y_true.min(), y_true.max()), (0, +1))
 y_pred = np.squeeze(y_pred[number])
 y_pred = np.interp(y_pred, (y_pred.min(), y_pred.max()), (0, +1))
 
-f, axs = plt.subplots(1,2,figsize=(15,15))
+# f, axs = plt.subplots(1,2,figsize=(15,15))
 
-plt.subplot(121)
-ax = plt.gca()
-cs = plt.contourf(y_true)
+# plt.subplot(121)
+# ax = plt.gca()
+# cs = plt.contourf(y_true)
 
-plt.subplot(122)
-ax = plt.gca()
-cs = plt.contourf(y_pred)
+# plt.subplot(122)
+# ax = plt.gca()
+# cs = plt.contourf(y_pred)
 
-st.pyplot(f)
+# st.pyplot(f)
 
 st.image(y_true,width=300)
 st.image(y_pred,width=300)
