@@ -3,6 +3,7 @@ import pandas as pd
 from PIL import Image
 import numpy as np
 from numpy import load
+
 st.write("""
 # Model Analytics
 Choose a loss function.
@@ -19,7 +20,8 @@ if loss == 'mse':
 else:
     y_pred = load('data/y_pred_{}.npy'.format(loss))
 
-number = st.slider("Pick a sample number (0-939)",0,939)
+
+number = st.number_input("Pick a sample number (0-939)",0,939)
 
 y_true = np.squeeze(y_test[number])
 y_true = np.interp(y_true, (y_true.min(), y_true.max()), (0, +1))
