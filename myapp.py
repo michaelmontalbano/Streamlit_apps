@@ -55,7 +55,7 @@ palette = palette + [0]*(768-len(palette))
 pi = Image.fromarray(y_true,'P')
 
 # Put the palette in
-pi.putpalette(palette)
+#pi.putpalette(palette)
 
 # Display and save
 pi.show()
