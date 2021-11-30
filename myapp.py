@@ -1,10 +1,14 @@
 import streamlit as st
 import pandas as pd
+import PIL
 
 st.write("""
 # My first application
-Heelo *world!*
+Choose an image.
 """)
 
-# df = pd.read_csv('/mnt/data/SHAVE_cases/Analysis/JTTI/practicum30mindata.csv')
-# st.line_chart(df['iMESH'])
+uploaded_file = st.file_uploader("Choose an image", type=["jpg", "png"])
+
+if uploaded_file is not None:
+    image = Image.open(uploaded_file)
+    st.image(uploaded_file, caption = 'Input image', use_column_width=True)
