@@ -43,6 +43,24 @@ y_pred[y_pred < 0.3] = 0
 
 # st.pyplot(f)
 
-st.image(y_true,width=300)
-st.image(y_pred,width=300)
+palette = [255,0,0,    # 0=red
+           0,255,0,    # 1=green
+           0,0,255,    # 2=blue
+           255,255,0,  # 3=yellow
+           0,255,255]  # 4=cyan
+# Pad with zeroes to 768 values, i.e. 256 RGB colours
+palette = palette + [0]*(768-len(palette))
+
+# Convert Numpy array to palette image
+pi = Image.fromarray(y_true,'P')
+
+# Put the palette in
+pi.putpalette(palette)
+
+# Display and save
+pi.show()
+pi.save('result.png')
+
+# st.image(y_true,width=300)
+# st.image(y_pred,width=300)
 
