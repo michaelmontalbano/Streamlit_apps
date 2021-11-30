@@ -24,7 +24,7 @@ else:
 number = st.number_input("Pick a sample number (0-939)",0,939)
 
 y_true = np.squeeze(y_test[number])
-y_true = np.interp(y_true, (y_true.min(), y_true.max()), (0, +1))
+y_true = np.interp(y_true, (y_true.min(), y_true.max()), (0, +255)).astype('uint8')
 y_true[y_true < 0.3] = 0
 
 y_pred = np.squeeze(y_pred[number])
