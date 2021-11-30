@@ -19,11 +19,7 @@ y_pred = load('data/y_pred_raw.npy')
 number = st.slider("Pick a sample number (0-939)",0,939)
 
 y_true = np.squeeze(y_test[number])
-
-new_arr = ((y_true - y_true.min()) * (1/(y_true.max() - y_true.min()) * 1)).astype(float)
-
-print(new_arr)
-
+y_true = np.interp(y_true, (y_true.min(), y_true.max()), (0, +1))
 
 st.image(y_true,width=200)
 
