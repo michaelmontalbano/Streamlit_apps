@@ -6,5 +6,5 @@ st.write("""
 Heelo *world!*
 """)
 
-df = pd.read_csv('/mnt/data/SHAVE_cases/Analysis/JTTI/practicum30mindata.csv')
-st.line_chart(df['iMESH'])
+# df = pd.read_csv('/mnt/data/SHAVE_cases/Analysis/JTTI/practicum30mindata.csv')
+# st.line_chart(df['iMESH'])
