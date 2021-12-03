@@ -15,6 +15,8 @@ MESH_bounds = [9.525,15.875,22.225,28.575,34.925,41.275,47.625,53.975,60.325,65,
 # scaler = scalers[0]
 
 
+
+
 st.write("""
 # Model Analytics
 Choose a loss function.
@@ -24,12 +26,12 @@ loss_functions = ['mse', 'mae']
 
 loss = st.radio("Pick a loss function", loss_functions)
 
-y_test = load('data/y_test_raw.npy')
+y_test = load('data/y_true_app.npy')
 
 if loss == 'mse':
-    y_pred = load('data/y_pred_raw.npy')
+    y_pred = load('data/y_pred_mse_app.npy')
 else:
-    y_pred = load('data/y_pred_{}.npy'.format(loss))
+    y_pred = load('data/y_pred_{}_app.npy'.format(loss))
 
 
 number = st.number_input("Pick a sample number (0-939)",0,939)
@@ -49,7 +51,7 @@ plt.xlabel('x (1/2 km)')
 plt.xlim([0,60])
 plt.xticks([0,10,20,30,40,50,60])
 plt.yticks([0,10,20,30,40,50,60])
-plt.title('True MESH with {} #{} (mm)'.format(loss,number))
+plt.title('True MESH  #{} (mm)'.format(number))
 
 plt.subplot(122)
 ax = plt.gca()
