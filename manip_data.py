@@ -18,7 +18,8 @@ y_pred_mae = np.load('data/y_pred_mae_full.npy')
 
 for i in np.arange(0,939,1):
     y_true_binary = np.where(y_true[i]<26,0,1)
-    if np.sum(y_true_binary) >= thres:
+    y_pred_binary = np.where(y_pred_mse[i]<26,0,1)
+    if np.sum(y_true_binary) >= thres and np.sum(y_pred_binary)>= thres:
         print(np.sum(y_true_binary))
         y_true_app.append(y_true[i])
         y_pred_mse_app.append(y_pred_mse[i])
