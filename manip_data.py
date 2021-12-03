@@ -10,7 +10,7 @@ y_pred_mae_app = []
 
 y_true = np.load('data/y_true.npy')
 y_pred_mse = np.load('data/y_pred_MSE_best.npy')
-y_pred_mae = np.load('data/y_pred_mae_app.npy')
+y_pred_mae = np.load('data/y_pred_mae_full.npy')
 
 # print(y_pred_mae.shape)
 # sys.exit()
@@ -27,8 +27,8 @@ for i in np.arange(0,939,1):
 print(len(y_true_app))
 
 y_true_app = np.asarray(y_true_app)
-y_pred_mse = np.asarray(y_pred_mse)
-y_pred_mae = np.asarray(y_pred_mae)
+y_pred_mse_app = np.asarray(y_pred_mse_app)
+y_pred_mae_app = np.asarray(y_pred_mae_app)
 
 np.save('data/y_true_app.npy',y_true_app)
 np.save('data/y_pred_mse_app.npy',y_pred_mse_app)
