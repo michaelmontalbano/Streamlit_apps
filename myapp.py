@@ -29,7 +29,7 @@ loss = st.radio("Pick a loss function", loss_functions)
 y_test = load('data/y_true_app.npy')
 
 if loss == 'mse':
-    y_pred = load('data/y_pred_mse.npy')
+    y_pred = load('data/y_pred_mse_app.npy')
 else:
     y_pred = load('data/y_pred_{}_app.npy'.format(loss))
 
