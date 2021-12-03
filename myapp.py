@@ -49,7 +49,7 @@ cs = plt.contourf(y_true)
 # ax = plt.gca()
 # cs = plt.contourf(y_pred)
 
-# st.pyplot(f)
+st.pyplot(f)
 
 ax = plt.gca()
 bounds = MESH_bounds
