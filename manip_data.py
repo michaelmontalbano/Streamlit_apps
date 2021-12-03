@@ -1,10 +1,8 @@
 import pandas as pd
 import numpy as np
-
+import sys
 # load the indices that are null
-nulls = pd.read_csv('null_indices_mse_15.csv')
 
-print(nulls)
 thres = 20
 y_true_app = []
 y_pred_mse_new = []
@@ -12,11 +10,16 @@ y_pred_mae_new = []
 
 y_true = np.load('data/y_true.npy')
 y_pred_mse = np.load('data/y_pred_MSE_best.npy')
-y_pred_mae = np.load('data/y_pred_mae_full.npy')
+y_pred_mae = np.load('data/y_pred_mae_app.npy')
+
+# print(y_pred_mae.shape)
+# sys.exit()
+
 
 for i in np.arange(0,939,1):
-    y_true_binary = np.where(y_true<26,0,1)
+    y_true_binary = np.where(y_true[i]<26,0,1)
     if np.sum(y_true_binary) >= thres:
+        print(np.sum(y_true_binary))
         y_true_app.append(y_true[i])
         y_pred_mse_new.append(y_pred_mse[i])
         y_pred_mae_new.append(y_pred_mae[i])
