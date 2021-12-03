@@ -35,11 +35,9 @@ else:
 number = st.number_input("Pick a sample number (0-939)",0,939)
 
 y_true = np.squeeze(y_test[number])
-
-
 y_pred = np.squeeze(y_pred[number])
 
-f, axs = plt.subplots(1,2,figsize=(15,15))
+f, axs = plt.subplots(1,2,figsize=(10,15))
 
 plt.subplot(121)
 ax = plt.gca()
