@@ -9,7 +9,7 @@ y_pred_mse_app = []
 y_pred_mae_app = []
 
 y_true = np.load('data/y_true.npy')
-y_pred_mse = np.load('data/y_pred_mse.npy')
+y_pred_mse = np.load('data/y_pred_noNSE.npy')
 y_pred_mae = np.load('data/y_pred_mae_full.npy')
 
 
