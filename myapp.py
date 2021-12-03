@@ -45,9 +45,9 @@ plt.subplot(121)
 ax = plt.gca()
 cs = plt.contourf(y_true)
 
-# plt.subplot(122)
-# ax = plt.gca()
-# cs = plt.contourf(y_pred)
+plt.subplot(122)
+ax = plt.gca()
+cs = plt.contourf(y_pred)
 
 st.pyplot(f)
 
