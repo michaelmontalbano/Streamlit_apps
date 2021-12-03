@@ -23,5 +23,5 @@ y_pred_mse = np.asarray(y_pred_mse)
 y_pred_mae = np.asarray(y_pred_mae)
 
 np.save('data/y_true_app.npy',y_true_app)
-np.save('data/y_pred_mse.npy',y_pred_mse)
-np.save('data/y_pred_mae.npy',y_pred_mae)
+np.save('data/y_pred_mse_app.npy',y_pred_mse)
+np.save('data/y_pred_mae_app.npy',y_pred_mae)
