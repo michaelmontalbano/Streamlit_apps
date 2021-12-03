@@ -4,6 +4,8 @@ import numpy as np
 # load the indices that are null
 nulls = pd.read_csv('null_indices_mse_15.csv')
 
+print(nulls)
+sys.exit()
 y_true_app = []
 y_pred_mse_new = []
 y_pred_mae_new = []
@@ -17,6 +19,8 @@ for i in np.arange(0,939,1):
         y_true_app.append(y_true[i])
         y_pred_mse_new.append(y_pred_mse[i])
         y_pred_mae_new.append(y_pred_mae[i])
+
+print(len(y_true_app))
 
 y_true_app = np.asarray(y_true_app)
 y_pred_mse = np.asarray(y_pred_mse)
